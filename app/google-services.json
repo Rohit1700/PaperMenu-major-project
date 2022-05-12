@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "335461570324",
+    "project_id": "papermenu-4696e",
+    "storage_bucket": "papermenu-4696e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335461570324:android:79557621346e0dda759401",
+        "android_client_info": {
+          "package_name": "com.podium.papermenu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335461570324-1e7pvl4tpb3n2vttadlq2a2ju5im656b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.podium.papermenu",
+            "certificate_hash": "ab292922d7f9a49246ff36967d4275ef2340caef"
+          }
+        },
+        {
+          "client_id": "335461570324-58is30h9lrs8haq2ss3qs55h9a73kh07.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1ATMbaddrkWfDWabXZo-y3McUL_53UYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335461570324-58is30h9lrs8haq2ss3qs55h9a73kh07.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

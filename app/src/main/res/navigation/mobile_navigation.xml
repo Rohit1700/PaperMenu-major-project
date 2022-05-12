@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_food_menu">
+
+    <fragment
+        android:id="@+id/navigation_orders"
+        android:name="com.podium.papermenu.ui.orders.OrderFragment"
+        android:label="@string/title_orders"
+        tools:layout="@layout/fragment_order" >
+        <action
+            android:id="@+id/action_navigation_orders_to_navigation_pay"
+            app:destination="@id/navigation_pay" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_food_menu"
+        android:name="com.podium.papermenu.ui.foodmenu.CategoryFragment"
+        android:label="@string/title_menu"
+        tools:layout="@layout/fragment_category" >
+        <argument android:name="category"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_navigation_food_menu_to_foodFragment"
+            app:destination="@id/foodFragment" />
+        <action
+            android:id="@+id/action_navigation_food_menu_to_orderConfirmDialog"
+            app:destination="@id/orderConfirmDialog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_pay"
+        android:name="com.podium.papermenu.ui.pay.PayFragment"
+        android:label="@string/title_pay"
+        tools:layout="@layout/fragment_pay">
+        <action
+            android:id="@+id/action_navigation_pay_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+        <argument
+            android:name="amount"
+            app:argType="float"
+            android:defaultValue="0.0" />
+        <action
+            android:id="@+id/action_navigation_pay_to_navigation_orders"
+            app:destination="@id/navigation_orders" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodFragment"
+        android:name="com.podium.papermenu.ui.foodmenu.FoodFragment"
+        android:label="fragment_food"
+        tools:layout="@layout/fragment_food" >
+        <argument
+            android:name="category"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_foodFragment_to_orderConfirmDialog"
+            app:destination="@id/orderConfirmDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.podium.papermenu.ui.pay.TransactionFragment"
+        android:label="fragment_transaction"
+        tools:layout="@layout/fragment_transaction">
+        <action
+            android:id="@+id/action_transactionFragment_to_navigation_food_menu"
+            app:destination="@id/navigation_food_menu" />
+    </fragment>
+    <dialog
+        android:id="@+id/orderConfirmDialog"
+        android:name="com.podium.papermenu.ui.orders.OrderConfirmDialog"
+        android:label="OrderConfirmDialog">
+        <action
+            android:id="@+id/action_orderConfirmDialog_to_navigation_orders"
+            app:destination="@id/navigation_orders" />
+        <action
+            android:id="@+id/action_orderConfirmDialog_to_navigation_food_menu"
+            app:destination="@id/navigation_food_menu" />
+    </dialog>
+</navigation>
