@@ -25,8 +25,11 @@ class OrderAdapter(private val orderList: ArrayList<Order>) :
             price.text = order.price
             category.text = order.category
             qty.text = order.qty.toString()
-            if (!order.isDelivered) isPrep.text = "Prep"
-            else isPrep.text = "Given"
+            if (order.delivered){
+                isPrep.text = "given"
+            }else{
+                isPrep.text = "cooking"
+            }
             Glide.with(img).load(order.img).into(img)
             val total = order.price.toFloat() * order.qty
             amount.text = total.toString()

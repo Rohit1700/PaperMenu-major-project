@@ -7,6 +7,6 @@ data class Order(
     val price: String = "100.0",
     val category: String = "",
     val img: String = "",
-    val isDelivered:Boolean = false,
-    val isPayed:Boolean = false,
+    val delivered:Boolean = false,
+    val payed:Boolean = false,
 )
